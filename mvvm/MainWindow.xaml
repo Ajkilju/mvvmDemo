@@ -1,0 +1,28 @@
+﻿<Window x:Class="mvvm.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:mvvm"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="242.188" Width="355.385">
+    <Window.DataContext>
+        <local:MainWindowViewModel />
+    </Window.DataContext>
+    
+    <Grid>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="7*"/>
+            <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
+
+        <TextBox x:Name="ColorTextBox"  Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding ColorTextBox, UpdateSourceTrigger=PropertyChanged}" BorderThickness="0" FontSize="22" />
+
+        <Canvas x:Name="ColorCanvas" Grid.Row="1" Background="{Binding ColorCanvas}"/>
+
+        <TextBlock x:Name="ColorTextBlock" Grid.Row="2" Text="{Binding ColorTextBlock}" VerticalAlignment="Bottom" Margin="5"/>
+
+    </Grid>
+</Window>
