@@ -20,7 +20,7 @@ namespace mvvm
         public MainWindowViewModel()
         {
             _model = new MainWindowModel();
-            _model.ColorTextBox = "ColorTextBox";
+            _model.ColorTextBox = "ColorTextBox"; 
             _model.ColorCanvas  = new SolidColorBrush(Colors.Black);
             colorCode = 'b';
         }
