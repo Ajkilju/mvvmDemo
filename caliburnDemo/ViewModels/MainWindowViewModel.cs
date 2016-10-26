@@ -14,12 +14,12 @@ namespace caliburnDemo.ViewModels
     public class MainWindowViewModel : PropertyChangedBase
     {
         private readonly MainWindowModel _model;
-        private readonly ColorProcessor _colorProcessor;    
+        private readonly IColorProcessor _colorProcessor;
 
-        public MainWindowViewModel()
+        public MainWindowViewModel(IColorProcessor colorProcessor)
         {
             _model = new MainWindowModel();
-            _colorProcessor = new ColorProcessor();
+            _colorProcessor = colorProcessor;
             ColorTextBox = "ColorTextBox";
         }
 
@@ -51,6 +51,11 @@ namespace caliburnDemo.ViewModels
                 _model.ColorCanvas = value;
                 NotifyOfPropertyChange("ColorCanvas");
             }
+        }
+
+        public void ColorCanvasMouseEnter()
+        {
+            ColorTextBox = "mouse enter!!!";
         }
 
         public string ColorTextBlock

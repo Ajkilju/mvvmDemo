@@ -7,7 +7,7 @@ using System.Windows.Media;
 
 namespace caliburnDemo.Services
 {
-    public class ColorProcessor
+    public class ColorProcessor : IColorProcessor
     {
         private char colorCode;
         private SolidColorBrush color;
